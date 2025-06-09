@@ -19,6 +19,7 @@ public class videoscript1 : MonoBehaviour
 
      void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
-        SceneManager.LoadScene(12);//the scene that you want to load after the video has ended.
+        SceneManager.LoadScene(48);
+        //SceneManager.LoadScene(12);//the scene that you want to load after the video has ended.
     }
 }

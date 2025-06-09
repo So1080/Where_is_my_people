@@ -341,7 +341,7 @@ public class Move : MonoBehaviour
 
         // Input for movement (forward/backward)
         float moveInputF = Input.GetAxis("Vertical");
-        // Debug.Log(moveInputF);
+        Debug.Log(moveInputF);
 
         // Calculate forward movement
         // Vector3 forwardMovementF = transform_cylinder.transform.forward * moveInputF * 15.0f;
@@ -417,6 +417,7 @@ public class Move : MonoBehaviour
 
         // Input for movement (forward/backward)
         float moveInput = Input.GetAxis("Vertical");
+        //Debug.Log(moveInput);
 
         // Input for rotation (left/right)
         float rotateInput = Input.GetAxis("Horizontal");

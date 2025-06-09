@@ -3990,12 +3990,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Select the round when I show you a beak.
+  m_text: 'Select the green check when I show you a beak.
 
 
 
-    Select the cross when
-    it is something else.
+    Select the red cross
+    when it is something else.
 
 
 

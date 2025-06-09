@@ -3808,7 +3808,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -464}
+  m_AnchoredPosition: {x: 2, y: -416}
   m_SizeDelta: {x: 309.331, y: 1184.3586}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2105390338
@@ -3831,17 +3831,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Select the round when I show you a leg.
+  m_text: 'Select the green check when I show you a leg.
 
 
 
-    Select the cross when it
-    is something else.
+    Select the red cross
+    when it is something else.
 
 
 
-    I will use the "cow" as a reference and also a few
-    images that I have in my database.'
+    I will use the "cow" as a reference and also
+    a few images that I have in my database.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
