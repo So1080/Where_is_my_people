@@ -30,6 +30,7 @@ public class Move : MonoBehaviour
     public GameObject Entity6Check;
     public GameObject Ask;
     public GameObject Take;
+    public GameObject Pointer;
 
     public GameObject Entity1Scan;
     private bool entity1visited = false;
@@ -43,6 +44,8 @@ public class Move : MonoBehaviour
     private bool visitedHuman2 = false;
     private bool visitedHuman3 = false;
 
+    private bool pointerCoroutineOn = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -54,6 +57,9 @@ public class Move : MonoBehaviour
         startPos_cylinder = transform_cylinder.position;
 
     }
+
+    
+
     // Update is called once per frame
     private void Update()
     {
@@ -66,6 +72,14 @@ public class Move : MonoBehaviour
         // MoveFB();
         // MoveLR();
         Turn();
+
+        if (Input.GetKeyDown(KeyCode.H)){
+            if (Pointer.activeSelf == false && pointerCoroutineOn == false){
+                pointerCoroutineOn = true;
+                StartCoroutine(pointer());
+            }       
+        }
+
 
         if (Input.GetKeyDown(KeyCode.Return)){
             Debug.Log(true);
@@ -92,70 +106,7 @@ public class Move : MonoBehaviour
                 }           
             }
 
-            // if (Entity1Check.activeSelf == true){
-            //     Entity1Scan.SetActive(true);
-            //     Entity1Check.SetActive(false);
-            //     if (entity4visited == false){
-            //         eye_orange.SetActive(true);
-            //         eye_green.SetActive(false);
-            //     } else {
-            //         //eye_orange.SetActive(false);
-            //         //eye_green.SetActive(true);
-            //         hair_green.SetActive(true);
-            //     }
-                
-            // }
-            // if (Entity2Check.activeSelf == true){
-            //     Entity2Check.SetActive(false);
-            //     if (entity5visited == false){
-            //         nose_orange.SetActive(true);
-            //         nose_green.SetActive(false);
-            //     } else {
-            //         nose_orange.SetActive(false);
-            //         nose_green.SetActive(true);
-            //     }
-            // }
-            // if (Entity3Check.activeSelf == true){
-            //     Entity3Check.SetActive(false);
-            //     if (entity6visited == false){
-            //         hair_orange.SetActive(true);
-            //         hair_green.SetActive(false);
-            //     } else {
-            //         hair_orange.SetActive(false);
-            //         hair_green.SetActive(true);
-            //     }
-            // }
-            // if (Entity4Check.activeSelf == true){
-            //     Entity4Check.SetActive(false);
-            //     if (entity1visited == false){
-            //         eye_orange.SetActive(true);
-            //         eye_green.SetActive(false);
-            //     } else {
-            //         eye_orange.SetActive(false);
-            //         eye_green.SetActive(true);
-            //     }
-            // }
-            // if (Entity5Check.activeSelf == true){
-            //     Entity5Check.SetActive(false);
-            //     if (entity2visited == false){
-            //         nose_orange.SetActive(true);
-            //         nose_green.SetActive(false);
-            //     } else {
-            //         nose_orange.SetActive(false);
-            //         nose_green.SetActive(true);
-            //     }
-            // }
-            // if (Entity6Check.activeSelf == true){
-            //     Entity6Check.SetActive(false);
-            //     if (entity3visited == false){
-            //         hair_orange.SetActive(true);
-            //         hair_green.SetActive(false);
-            //     } else {
-            //         hair_orange.SetActive(false);
-            //         hair_green.SetActive(true);
-            //     }
-            // }
-
+            
             if ((entity1visited == true) && (entity2visited == true) && (entity3visited == true) && (entity4visited == true) && (entity5visited == true) && (entity6visited == true)) {
                 SceneManager.LoadScene(4);
             }
@@ -164,6 +115,14 @@ public class Move : MonoBehaviour
                 SceneManager.LoadScene(4);
             }
         }
+    }
+
+    IEnumerator pointer(){
+        Pointer.SetActive(true);
+        yield return new WaitForSeconds(5);
+        Pointer.SetActive(false);
+        yield return new WaitForSeconds(5);
+        pointerCoroutineOn = false;
     }
 
     
@@ -248,65 +207,6 @@ public class Move : MonoBehaviour
                 Pause();
             }
 
-            // if ((collision.gameObject.name == "Entity1") && (this.entity1visited == false)){
-            //     Debug.Log(true);
-            //     print("true 1");
-            //     this.entity1visited = true;
-            //     //Destroy(collision.GameObject);
-            //     canMove = false;
-                
-            //     Entity1Check.SetActive(true);
-            //     Pause();
-            //     Destroy(collision.gameObject);
-            // }
-
-            // if ((collision.gameObject.name == "Entity2") && (this.entity2visited == false)){
-            //     Debug.Log(true);
-            //     print("true 2");
-            //     this.entity2visited = true;
-            //     //Destroy(collision.GameObject);
-            //     canMove = false;
-                
-            //     Entity2Check.SetActive(true);
-            //     Pause();
-            //     Destroy(collision.gameObject);
-            // }
-
-            // if ((collision.gameObject.name == "Entity3") && (this.entity3visited == false)){
-                
-            //     this.entity3visited = true;
-            //     canMove = false;               
-            //     Entity3Check.SetActive(true);
-            //     Pause();
-            //     Destroy(collision.gameObject);
-            // }
-
-            // if ((collision.gameObject.name == "Entity4") && (this.entity4visited == false)){
-                
-            //     this.entity4visited = true;
-            //     canMove = false;               
-            //     Entity4Check.SetActive(true);
-            //     Pause();
-            //     Destroy(collision.gameObject);
-            // }
-
-            // if ((collision.gameObject.name == "Entity5") && (this.entity5visited == false)){
-                
-            //     this.entity5visited = true;
-            //     canMove = false;               
-            //     Entity5Check.SetActive(true);
-            //     Pause();
-            //     Destroy(collision.gameObject);
-            // }
-
-            // if ((collision.gameObject.name == "Entity6") && (this.entity6visited == false)){
-                
-            //     this.entity6visited = true;
-            //     canMove = false;               
-            //     Entity6Check.SetActive(true);
-            //     Pause();
-            //     Destroy(collision.gameObject);
-            // }
             
         }
 
